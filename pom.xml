@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>io.github.isa-group.fishbowl</groupId>
   <artifactId>fishbowl-fish</artifactId>
-  <version>1.0</version>
+  <version>1.0-SNAPSHOT</version>
 
   <properties>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
+    <mainClass>es.us.isa.botica.fishbowl.fish.FishBotLauncher</mainClass>
+    <imageTag>botica-bot-fishbowl-fish-java</imageTag>
   </properties>
 
   <dependencies>
@@ -54,10 +58,10 @@
                 <manifest>
                   <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                   <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                  <mainClass>es.us.isa.botica.fishbowl.fish.FishBotLauncher</mainClass>
+                  <mainClass>${mainClass}</mainClass>
                 </manifest>
               </archive>
-              <finalName>${project.artifactId}</finalName>
+              <finalName>bot</finalName>
               <appendAssemblyId>false</appendAssemblyId>
               <descriptorRefs>
                 <descriptorRef>jar-with-dependencies</descriptorRef>
