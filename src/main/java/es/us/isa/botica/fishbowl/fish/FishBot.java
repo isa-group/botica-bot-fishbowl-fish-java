@@ -1,12 +1,13 @@
 package es.us.isa.botica.fishbowl.fish;
 
-import es.us.isa.botica.bot.AbstractBotApplication;
+import es.us.isa.botica.bot.BaseBot;
+import es.us.isa.botica.bot.ProactiveTask;
 import java.util.Random;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class FishBot extends AbstractBotApplication {
+public class FishBot extends BaseBot {
   private static final Logger log = LoggerFactory.getLogger(FishBot.class);
   private static final int MAX_INDEX = 9;
 
@@ -23,8 +24,8 @@ public class FishBot extends AbstractBotApplication {
     this.y = Integer.parseInt(System.getenv("FISH_POSITION_Y"));
   }
 
-  @Override
-  public void executeAction() {
+  @ProactiveTask
+  public void performTask() {
     int previousX = this.x;
     int previousY = this.y;
 
