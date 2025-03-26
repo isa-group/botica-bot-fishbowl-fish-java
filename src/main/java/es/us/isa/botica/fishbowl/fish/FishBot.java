@@ -25,7 +25,7 @@ public class FishBot extends BaseBot {
   }
 
   @ProactiveTask
-  public void performTask() {
+  public void moveFish() {
     int previousX = this.x;
     int previousY = this.y;
 
@@ -34,6 +34,8 @@ public class FishBot extends BaseBot {
     log.info("Moved! ({},{}) -> ({},{})", previousX, previousY, this.x, this.y);
 
     publishOrder(
+        "fishbowl_manager",
+        "register_movement",
         new JSONObject()
             .put("silhouette", this.silhouette)
             .put("x", this.x)
